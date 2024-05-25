@@ -1,0 +1,35 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        main: ["Raleway"],
+        body: ["Inter"],
+        sub: ["Avenir"],
+      },
+      colors: {
+        primary: {
+          100: "#012811",
+          200: "#00210D",
+          300: "#090C08",
+        },
+        secondary: {
+          100: "#F3A218",
+          200: "#64AB80",
+          300: "#EEF4F0",
+        },
+
+        white: {
+          100: "#fff",
+          200: "#F8FCF9",
+          300: "#F9FAFB",
+        },
+      },
+      // backgroundImage: {
+      //   "bus-image": "url('/public/profile.jpeg')",
+      // },
+    },
+  },
+  plugins: [],
+};
