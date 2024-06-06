@@ -2,7 +2,7 @@ import React from "react";
 
 const SuccessCount = () => {
   return (
-    <div className="py-8 md:py-16 bg-white-100">
+    <div className="py-16 md:py-24 bg-white-100">
       <div className="grid md:grid-cols-2 gap-y-8 md:gap-y-0 md:gap-x-20 text-primary-300 px-4 md:px-16">
         <div className="flex flex-col justify-center">
           <h3 className="mb-5 font-semibold text-sm md:text-base">So far...</h3>

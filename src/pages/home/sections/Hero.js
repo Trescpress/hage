@@ -11,8 +11,8 @@ import hero_img_3mobile from "../../../assests/hero_img_3mobile.svg";
 const Hero = () => {
   return (
     <main>
-      <div className="pt-36 px-4 pb-8 md:px-auto md:pt-52 md:pb-28">
-        <div className="flex flex-col justify-center items-center mb-6 md:mb-[4.5rem]">
+      <div>
+        <div className="flex flex-col justify-center items-center mb-6 md:mb-[4.5rem] px-4 md:px-auto">
           <h1 className=" md:w-2/3 md:px-0 mb-6 md:mb-8 text-[2rem] md:text-6xl  font-normal font-main text-center text-primary-200  md:leading-normal">
             Control your{" "}
             <span className="text-secondary-100">cargo logistics</span> easily,
