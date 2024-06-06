@@ -2,7 +2,7 @@ import React from "react";
 
 const Hiring = () => {
   return (
-    <div className="bg-white-100 py-16 md:py-16">
+    <div className="bg-white-100 py-16 md:py-24">
       <div className="px-4 md:px-16">
         <div className="flex flex-col justify-center items-center">
           <h1 className=" font-main font-normal text-2xl md:text-5xl leading-9 md:leading-tight">

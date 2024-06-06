@@ -8,7 +8,7 @@ import checkgold from "../../../assests/check-gold.svg";
 
 const MarketplaceFeatures2 = () => {
   return (
-    <div className="bg-white-100 md:py-12">
+    <div className="bg-white-100">
       <div className="px-4 md:px-24">
         <div className="grid  md:grid-cols-2 ">
           <div className=" flex justify-center items-center order-2 md:order-1 mt-8 md:mt-0 mb-12 md:mb-0">
@@ -145,28 +145,6 @@ const MarketplaceFeatures2 = () => {
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className=" py-8 md:py-28 bg-[#F8FCF9]">
-          <div className="grid md:grid-cols-2 gap-y-6 md:gap-y-0  ">
-            <div className="flex flex-col justify-center text-primary-300">
-              <h1 className="text-2xl md:text-4xl font-normal font-main leading-8 pb-3 md:pb-6 ">
-                Check out our marketplace today!
-              </h1>
-              <p className=" text-sm md:text-base leading-6 md:leading-8 font-body font-normal md:pr-24 ">
-                Our multi-faceted products meet the needs of manufacturers,
-                transporters and distributors
-              </p>
-            </div>
-            <div className="md:flex  justify-center items-center">
-              <button className="my-2 md:my-0 md:mx-2 py-3 md:py-4 px-auto w-full rounded-lg text-base border border-secondary-200 text-secondary-200">
-                Sign up today
-              </button>
-              <button className="my-2 md:my-0 md:mx-2 py-3 md:py-4 px-auto w-full rounded-lg text-base text-white-100 bg-secondary-200">
-                Book a demo
-              </button>
             </div>
           </div>
         </div>

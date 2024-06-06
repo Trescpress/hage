@@ -1,17 +1,13 @@
 import React from "react";
 
-import HeaderInfo from "../../components/navigation/HeaderInfo";
-import Navbar from "../../components/navigation/Navbar";
 import MarketplaceFeatures from "./sections/MarketplaceFeatures";
-import Footer from "../../components/Footer/Footer";
+import BookDemo from "../../components/Bookdemo/BookDemo";
 
 const Marketplace = () => {
   return (
     <>
-      <HeaderInfo />
-      <Navbar />
       <MarketplaceFeatures />
-      <Footer />
+      <BookDemo signUpButtonText="Sign up today" demoButtonText="Book demo" />
     </>
   );
 };

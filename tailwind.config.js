@@ -26,6 +26,12 @@ module.exports = {
           300: "#F9FAFB",
         },
       },
+      borderImageSource: {
+        gradient: "linear-gradient(90deg, #F3A218 0%, #64AB80 100%)",
+      },
+      borderImageSlice: {
+        gradient: "1",
+      },
       // backgroundImage: {
       //   "bus-image": "url('/public/profile.jpeg')",
       // },
