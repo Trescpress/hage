@@ -7,11 +7,14 @@ import Marketplace2 from "./pages/marketplace/Marketplace2";
 import Service1 from "./pages/ourservice/Service1";
 import Service2 from "./pages/ourservice/Service2";
 import Service3 from "./pages/ourservice/Service3";
-import Aboutus from "./pages/company/Aboutus";
+import Company from "./pages/company/Company";
 import BlogPost from "./pages/blog/BlogPost";
 import BlogPostContent from "./pages/blog/BlogPostContent";
+import useFetch from "./hooks/useFetch";
 
 function App() {
+  const { data } = useFetch("http://localhost:1337/api/blogs?populate=*");
+
   return (
     <Router>
       <Layout>
@@ -28,11 +31,14 @@ function App() {
 
           <Route path="/service/3" element={<Service3 />} />
 
-          <Route path="/company" element={<Aboutus />} />
+          <Route path="/company" element={<Company />} />
 
-          <Route path="/blogpost" element={<BlogPost />} />
+          <Route path="/blog" element={<BlogPost posts={data} />} />
 
-          <Route path="/blogpostcontent" element={<BlogPostContent />} />
+          <Route
+            path="/blogpost/:id"
+            element={<BlogPostContent posts={data} />}
+          />
 
           <Route path="*" element={<Homepage />} />
         </Routes>

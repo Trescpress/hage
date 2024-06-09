@@ -1,189 +1,163 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 
-import { Link } from "react-router-dom";
 import backIcon from "../../../assests/backIcon.svg";
 import facebook from "../../../assests/blackFacebook.svg";
 import copyLink from "../../../assests/copyLink.svg";
 import twitter from "../../../assests/blackTwitter.svg";
 import linkedin from "../../../assests/blackLinkedIn.svg";
-import blogImage from "../../../assests/blogImage.png";
-import blogContentImage from "../../../assests/blogContentImage.png";
+import noImage from "../../../assests/noBlogImage.png";
 
-const BlogPostContentFeatures = () => {
+const BlogPostContentFeatures = ({ post }) => {
+  const [showCopyPopup, setShowCopyPopup] = useState(false);
+
+  const navigate = useNavigate();
+
+  const goBackHandler = () => {
+    navigate(-1);
+  };
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setShowCopyPopup(true);
+    setTimeout(() => {
+      setShowCopyPopup(false);
+    }, 2000); // Popup will disappear after 2 seconds
+  };
+
+  const imageUrl =
+    post.attributes &&
+    post.attributes.coverImage &&
+    post.attributes.coverImage.data
+      ? `http://localhost:1337${post.attributes.coverImage.data.attributes.url}`
+      : noImage; // If cover image data is not available, use noImage as the source
+
   return (
-    <div className="bg-white-100">
+    <div className="bg-white">
       <div className="px-4 md:px-16 md:py-4">
         <div className="flex flex-col items-center w-full">
           <div className="md:w-[70%]">
-            <Link className="flex items-center font-light mb-6">
+            <button
+              onClick={goBackHandler}
+              className="flex items-center font-light mb-6"
+            >
               <img src={backIcon} alt="back" />
               <span className="px-2">Back</span>
-            </Link>
+            </button>
             <h1 className="font-main font-normal text-2xl md:text-5xl leading-9 md:leading-tight">
-              The Rise of E-Commerce Fulfillment: How Smart Warehousing is
-              Revolutionizing Delivery Speeds
+              {post.attributes && post.attributes.blogTitle}
             </h1>
             <div className="md:flex justify-between my-8 md:my-12">
               <div>
                 <h4 className="text-sm font-semibold mb-1.5">
-                  Oluwatosin Adentan
+                  {post.attributes && post.attributes.author}
                 </h4>
 
                 <div className="flex items-center text-sm font-light">
-                  <span>11 May 2024</span>
+                  <span>
+                    {post.attributes && post.attributes.publishedDate}
+                  </span>
 
                   <div className="w-1 h-1 bg-black rounded-full mx-2"></div>
 
-                  <span>5 min read</span>
+                  <span>{post.attributes && post.attributes.readTime}</span>
                 </div>
               </div>
-              <ul className="flex md:justify-between items-center mt-6 md:mt-0">
-                <Link className="p-1 bg-[#F4F4F4] rounded-full mx-2">
-                  <img src={copyLink} alt="copy" />
-                </Link>
-                <Link className="p-1 bg-[#F4F4F4] rounded-full mx-2">
-                  <img src={linkedin} alt="linkedin" />
-                </Link>
 
-                <Link className="p-1 bg-[#F4F4F4] rounded-full mx-2">
-                  <img src={twitter} alt="twitter" />
-                </Link>
+              <ul className="mt-6">
+                <div className="flex  items-center">
+                  <li className="p-1 bg-[#F4F4F4] rounded-full mx-2 cursor-pointer">
+                    <img src={copyLink} alt="copy" onClick={handleCopyLink} />
+                  </li>
+                  <li className="p-1 bg-[#F4F4F4] rounded-full mx-2 cursor-pointer">
+                    <a
+                      href="https://www.instagram.com/tryhage/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img src={facebook} alt="facebook" />
+                    </a>
+                  </li>
+                  <li className="p-1 bg-[#F4F4F4] rounded-full mx-2 cursor-pointer">
+                    <a
+                      href="https://x.com/tryhagetoday"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img src={twitter} alt="twitter" />
+                    </a>
+                  </li>
+                  <li className="p-1 bg-[#F4F4F4] rounded-full mx-2 cursor-pointer">
+                    <a
+                      href="https://www.linkedin.com/company/naijawaysglobal/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img src={linkedin} alt="linkedin" />
+                    </a>
+                  </li>
+                </div>
 
-                <Link className="p-1 bg-[#F4F4F4] rounded-full mx-2">
-                  <img src={facebook} alt="facebook" />
-                </Link>
+                {showCopyPopup && (
+                  <div className="text-xs text-secondary-200 mt-2">
+                    Link copied!
+                  </div>
+                )}
               </ul>
             </div>
           </div>
         </div>
 
-        <img src={blogImage} alt="blog" className="w-full  md:h-[37.5rem]" />
+        <img src={imageUrl} alt="blog" className="w-full md:h-[37.5rem]" />
 
         <div className="flex justify-center items-center my-12">
           <div className="md:w-[65%]">
-            <div>
-              <h1 className="text-2xl md:text-4xl font-semibold font-body my-3 md:my-6">
-                Introduction
-              </h1>
-              <p className="font-body font-light">
-                The e-commerce landscape is booming, with online shopping
-                becoming the norm for many consumers. However, with faster
-                delivery expectations comes a significant challenge for
-                businesses: ensuring efficient and timely order fulfillment.
-                This is where smart warehousing comes in – a game-changer in the
-                world of logistics.
-              </p>
+            <div className="prose prose-lg">
+              <ReactMarkdown>{post.attributes.blogContent}</ReactMarkdown>
             </div>
-            <div className="my-6">
-              <img src={blogContentImage} alt="blog" className="py-4" />
-              <div className="flex">
-                <div className=" border border-solid border-black"></div>
-                <p className="px-2 font-body font-light text-sm">
-                  Image caption goes here
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-body md:text-xl font-semibold mb-6">
-                Smart warehousing utilizes automation, data analytics, and
-                advanced technologies to optimize storage space, streamline
-                picking and packing processes, and expedite order fulfillment.
-              </h3>
-              <p className="font-body font-light">
-                Warehouse Management Systems (WMS): These software platforms
-                manage inventory levels, optimize picking routes, and track
-                order progress in real-time, ensuring accuracy and efficiency.
-                Data Analytics: By analyzing historical data and customer
-                behavior, businesses can anticipate demand fluctuations and
-                optimize inventory levels accordingly.
-              </p>
-              <div className="flex my-8">
-                <div className=" border border-solid border-black"></div>
-                <p className="md:text-xl italic font-body  pl-4 md:pl-8">
-                  “The Internet of Things (IoT): Sensors and connected devices
-                  can track goods in real-time, providing valuable insights into
-                  inventory location and movement.”
-                </p>
-              </div>
-
-              <div className="my-6">
-                <span className="my-2 font-light">
-                  Benefits of Smart Warehousing:
-                </span>
-
-                <ul>
-                  <li className="my-2 font-light flex items-baseline ">
-                    <p className="w-1 h-1 bg-black rounded-full mx-2 md:mx-4"></p>
-                    <p>
-                      Increased Efficiency: Automated processes and data-driven
-                      workflows significantly reduce fulfillment times and order
-                      fulfillment errors.
-                    </p>
-                  </li>
-
-                  <li className="my-2 font-light flex items-baseline ">
-                    <p className="w-1 h-1 bg-black rounded-full mx-2 md:mx-4"></p>
-                    <p>
-                      Reduced Costs: Efficient space utilization and optimized
-                      picking routes translate to lower operational costs.
-                    </p>
-                  </li>
-
-                  <li className="my-2 font-light flex items-baseline ">
-                    <p className="w-1 h-1 bg-black rounded-full mx-2 md:mx-4"></p>
-                    <p>
-                      Improved Customer Satisfaction: Faster delivery speeds and
-                      improved order accuracy lead to happier customers and a
-                      competitive edge.
-                    </p>
-                  </li>
-
-                  <li className="my-2 font-light flex items-baseline ">
-                    <p className="w-1 h-1 bg-black rounded-full mx-2 md:mx-4"></p>
-                    <p>
-                      Scalability: Smart warehouses can easily adapt to changing
-                      business needs and growing order volumes.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div>
-              <h1 className="text-2xl md:text-4xl font-semibold font-body my-3 md:mt-16">
-                Conclusions
-              </h1>
-
-              <p className="font-body font-light md:mt-8">
-                The rise of e-commerce has pushed the boundaries of logistics.
-                Smart warehousing provides a solution by leveraging technology
-                and automation to ensure efficient order fulfillment and meet
-                the ever-increasing demands of online shoppers. As technology
-                continues to evolve, we can expect even more innovative
-                solutions to emerge, further revolutionizing the world of
-                e-commerce fulfillment.
-              </p>
-            </div>
-
             <div className="mt-12 md:mt-20">
-              <h3>Share this post</h3>
+              <h3 className="text-lg font-semibold">Share this post</h3>
 
-              <ul className="flex items-center mt-6">
-                <Link className="p-1 bg-[#F4F4F4] rounded-full mx-2">
-                  <img src={copyLink} alt="copy" />
-                </Link>
-                <Link className="p-1 bg-[#F4F4F4] rounded-full mx-2">
-                  <img src={linkedin} alt="linkedin" />
-                </Link>
+              <ul className="mt-6">
+                <div className="flex  items-center">
+                  <li className="p-1 bg-[#F4F4F4] rounded-full mx-2 cursor-pointer">
+                    <img src={copyLink} alt="copy" onClick={handleCopyLink} />
+                  </li>
+                  <li className="p-1 bg-[#F4F4F4] rounded-full mx-2 cursor-pointer">
+                    <a
+                      href="https://www.instagram.com/tryhage/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img src={facebook} alt="facebook" />
+                    </a>
+                  </li>
+                  <li className="p-1 bg-[#F4F4F4] rounded-full mx-2 cursor-pointer">
+                    <a
+                      href="https://x.com/tryhagetoday"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img src={twitter} alt="twitter" />
+                    </a>
+                  </li>
+                  <li className="p-1 bg-[#F4F4F4] rounded-full mx-2 cursor-pointer">
+                    <a
+                      href="https://www.linkedin.com/company/naijawaysglobal/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img src={linkedin} alt="linkedin" />
+                    </a>
+                  </li>
+                </div>
 
-                <Link className="p-1 bg-[#F4F4F4] rounded-full mx-2">
-                  <img src={twitter} alt="twitter" />
-                </Link>
-
-                <Link className="p-1 bg-[#F4F4F4] rounded-full mx-2">
-                  <img src={facebook} alt="facebook" />
-                </Link>
+                {showCopyPopup && (
+                  <div className="text-xs text-secondary-200 mt-2">
+                    Link copied!
+                  </div>
+                )}
               </ul>
             </div>
 
@@ -191,7 +165,9 @@ const BlogPostContentFeatures = () => {
 
             <div>
               <div>
-                <h4 className="text-sm font-semibold mb-1.5">Full Name</h4>
+                <h4 className="text-sm font-semibold mb-1.5">
+                  {post.attributes && post.attributes.author}
+                </h4>
 
                 <div className="flex items-center text-sm font-light">
                   <span>Job title, Company name</span>
