@@ -36,18 +36,20 @@ const Hero = () => {
           </span>
         </div>
 
-        <div className="flex overflow-x-scroll  md:hidden">
-          <span className="flex-none">
-            <img src={hero_img_1mobile} alt="image1" className="" />
-          </span>
+        <div className=" overflow-hidden md:hidden px-4">
+          <div className="flex overflow-x-scroll ">
+            <span className="flex-none">
+              <img src={hero_img_1mobile} alt="image1" className="" />
+            </span>
 
-          <span className="flex-none px-4">
-            <img src={hero_img_2mobile} alt="image2" />
-          </span>
+            <span className="flex-none px-4">
+              <img src={hero_img_2mobile} alt="image2" />
+            </span>
 
-          <span className="flex-none">
-            <img src={hero_img_3mobile} alt="image3" />
-          </span>
+            <span className="flex-none">
+              <img src={hero_img_3mobile} alt="image3" />
+            </span>
+          </div>
         </div>
       </div>
     </main>

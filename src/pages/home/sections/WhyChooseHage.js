@@ -7,6 +7,9 @@ import busImage from "../../../assests/bus-Image.svg";
 import busImagemobile from "../../../assests/bus-Imagemobile.svg";
 
 const WhyChooseHage = () => {
+  const handleBookDemoClick = () => {
+    window.location.href = "mailto:info@hage.com";
+  };
   return (
     <div className="bg-white-200 px-4 md:px-16">
       <div className="py-8  md:py-16  ">
@@ -128,7 +131,10 @@ const WhyChooseHage = () => {
             <button className="my-2 md:my-0 md:mx-2 py-3 md:py-4 px-auto w-full rounded-lg text-base border border-secondary-200 text-secondary-200">
               Sign up today
             </button>
-            <button className="my-2 md:my-0 md:mx-2 py-3 md:py-4 px-auto w-full rounded-lg text-base text-white-100 bg-secondary-200">
+            <button
+              onClick={handleBookDemoClick}
+              className="my-2 md:my-0 md:mx-2 py-3 md:py-4 px-auto w-full rounded-lg text-base text-white-100 bg-secondary-200"
+            >
               Book a demo
             </button>
           </div>
