@@ -1,12 +1,12 @@
 import React from "react";
 
-import image1 from "../../../assests/ola-omotosho.svg";
-import image2 from "../../../assests/ola-omotosho2.svg";
-import image3 from "../../../assests/mojisola-omotosho.svg";
+import image1 from "../../../assests/ola-omotosho.png";
+import image2 from "../../../assests/oladipupo-sulaiman.png";
+import image3 from "../../../assests/mojisola-omotosho.png";
 import mail from "../../../assests/mail.svg";
 import linkdein from "../../../assests/LinkedInfilled.svg";
 
-// Define team member data
+//Team member data
 const teamMembers = [
   {
     name: "Ola Omotosho",
@@ -32,7 +32,7 @@ const teamMembers = [
     description:
       "A finance professional who seamlessly integrates finance expertise with logistics proficiency, drawing from a decade in the family trucking business and a successful banking tenure.",
     email: "momotosho@naijawaysglobal.com",
-    linkedin: "linkedin.com/in/kofi-achampong-jd-mba-candidate-a144b4153",
+    linkedin: "https://www.linkedin.com/",
     image: image3,
   },
 ];

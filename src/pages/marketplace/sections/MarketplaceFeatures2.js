@@ -1,8 +1,8 @@
 import React from "react";
 
-import marketplace2image1 from "../../../assests/marketplace2image1.svg";
-import marketplace2image2 from "../../../assests/marketplace2image2.svg";
-import marketplace3image3 from "../../../assests/marketplace3image3.svg";
+import marketplace2image1 from "../../../assests/marketplace2image1.png";
+import marketplace2image2 from "../../../assests/marketplace2image2.png";
+import marketplace3image3 from "../../../assests/marketplace2image3.png";
 
 import checkgold from "../../../assests/check-gold.svg";
 

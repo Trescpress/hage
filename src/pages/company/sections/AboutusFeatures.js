@@ -3,8 +3,8 @@ import React from "react";
 import money from "../../../assests/money-2.svg";
 import bus from "../../../assests/bus-1.svg";
 import graph from "../../../assests/graph-1.svg";
-import busImage from "../../../assests/bus-Image.svg";
-import busImagemobile from "../../../assests/bus-Imagemobile.svg";
+import trucks from "../../../assests/trucks.png";
+import trucksMobile from "../../../assests/trucksmobile.png";
 
 const AboutusFeatures = () => {
   return (
@@ -48,11 +48,11 @@ const AboutusFeatures = () => {
           </div>
 
           <div className="">
-            <img src={busImage} alt="bus" className="hidden md:flex w-full" />
+            <img src={trucks} alt="truck" className="hidden md:flex w-full" />
 
             <img
-              src={busImagemobile}
-              alt="bus"
+              src={trucksMobile}
+              alt="truck"
               className=" flex md:hidden w-full"
             />
           </div>

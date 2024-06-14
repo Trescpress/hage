@@ -4,7 +4,7 @@ import BlogItemPost from "../blogItem/BlogItemPost";
 
 const BlogPostFeatures = ({ posts }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6;
+  const postsPerPage = 9;
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;

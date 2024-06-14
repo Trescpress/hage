@@ -1,12 +1,12 @@
 import React from "react";
 
-import hero_img_1 from "../../../assests/hero_img_1.svg";
-import hero_img_2 from "../../../assests/hero_img_2.svg";
-import hero_img_3 from "../../../assests/hero_img_3.svg";
+import hero_img_1 from "../../../assests/hero_img_1.png";
+import hero_img_2 from "../../../assests/hero_img_2.png";
+import hero_img_3 from "../../../assests/hero_img_3.png";
 
-import hero_img_1mobile from "../../../assests/hero_img_1mobile.svg";
-import hero_img_2mobile from "../../../assests/hero_img_2mobile.svg";
-import hero_img_3mobile from "../../../assests/hero_img_3mobile.svg";
+import hero_img_1mobile from "../../../assests/hero_img_1mobile.png";
+import hero_img_2mobile from "../../../assests/hero_img_2mobile.png";
+import hero_img_3mobile from "../../../assests/hero_img_3mobile.png";
 
 const Hero = () => {
   return (

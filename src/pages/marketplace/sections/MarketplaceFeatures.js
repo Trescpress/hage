@@ -1,16 +1,16 @@
 import React from "react";
 
-import hagephones from "../../../assests/HagePhones.svg";
+import hagephones from "../../../assests/HagePhones.png";
 import andriodappbadge from "../../../assests/Mobileappstorebadge.svg";
 import appleappbadge from "../../../assests/Applestorebadge.svg";
 
 import andriodappbadgemobile from "../../../assests/Mobileappstorebadgemobile.svg";
 import appleappbadgemobile from "../../../assests/Applestorebadgemobile.svg";
 
-import marketplaceimage1 from "../../../assests/marketplaceimage1.svg";
-import marketplaceimage2 from "../../../assests/marketplaceimage2.svg";
-import marketplaceimage3 from "../../../assests/marketplaceimage2.svg";
-import marketplaceimage4 from "../../../assests/marketplaceimage2.svg";
+import marketplaceimage1 from "../../../assests/marketplaceimage1.png";
+import marketplaceimage2 from "../../../assests/marketplaceimage2.png";
+import marketplaceimage3 from "../../../assests/marketplaceimage3.png";
+import marketplaceimage4 from "../../../assests/marketplaceimage4.png";
 import checkgold from "../../../assests/check-gold.svg";
 
 const MarketplaceFeatures = () => {

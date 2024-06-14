@@ -9,12 +9,12 @@ import BlogLoadingState from "../../components/ui/BlogLoadingState";
 const BlogPostContent = ({ posts }) => {
   const params = useParams();
   const navigate = useNavigate();
-  const postId = params.id; // Assuming postId is initially a string
+  const postId = params.id;
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const postIdInt = parseInt(postId, 10); // Convert postId to integer for comparison
+    const postIdInt = parseInt(postId, 10);
     if (posts) {
       const foundPost = posts.data.find((post) => post.id === postIdInt);
       setPost(foundPost);
