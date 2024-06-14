@@ -1,12 +1,11 @@
 import React from "react";
 
-import image1 from "../../../assests/babatundeabimbola.svg";
-import image2 from "../../../assests/abiodunogunmodede.svg";
+import image1 from "../../../assests/babatundeabimbola.png";
+import image2 from "../../../assests/abiodunogunmodede.png";
 import image3 from "../../../assests/Kofi.png";
 import mail from "../../../assests/mail.svg";
 import linkedin from "../../../assests/LinkedInfilled.svg";
 
-// Define advisory board member data
 const advisoryBoardMembers = [
   {
     name: "Babatunde Abimbola",
@@ -23,7 +22,7 @@ const advisoryBoardMembers = [
     position: "Strategic Planning & Compliance Advisor",
     description:
       "Over 20 years' experience in banking and regulatory compliance, as well as expertise spanning business administration, labor relations, business analytics, and risk management.",
-    email: "",
+    email: "abiodunhotsopt@yahoo.com",
     linkedin: "https://www.linkedin.com/in/abiodunogunmodede/",
     image: image2,
   },

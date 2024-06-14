@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout/Layout";
 import Homepage from "./pages/home/Homepage";
-import Marketplace from "./pages/marketplace/Marketplace";
-import Marketplace2 from "./pages/marketplace/Marketplace2";
-import Service1 from "./pages/ourservice/Service1";
-import Service2 from "./pages/ourservice/Service2";
-import Service3 from "./pages/ourservice/Service3";
+import Manufacturers from "./pages/marketplace/Manufacturers";
+import Transporters from "./pages/marketplace/Transporters";
+import Inland from "./pages/ourservice/Inland";
+import Freight from "./pages/ourservice/Freight";
+import RailCargo from "./pages/ourservice/RailCargo";
 import Company from "./pages/company/Company";
 import BlogPost from "./pages/blog/BlogPost";
 import BlogPostContent from "./pages/blog/BlogPostContent";
@@ -21,15 +21,18 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
 
-          <Route path="/marketplace/1" element={<Marketplace />} />
+          <Route
+            path="/marketplace/manufacturers"
+            element={<Manufacturers />}
+          />
 
-          <Route path="/marketplace/2" element={<Marketplace2 />} />
+          <Route path="/marketplace/transporters" element={<Transporters />} />
 
-          <Route path="/service/1" element={<Service1 />} />
+          <Route path="/service/inland" element={<Inland />} />
 
-          <Route path="/service/2" element={<Service2 />} />
+          <Route path="/service/freight" element={<Freight />} />
 
-          <Route path="/service/3" element={<Service3 />} />
+          <Route path="/service/railcargo" element={<RailCargo />} />
 
           <Route path="/company" element={<Company />} />
 

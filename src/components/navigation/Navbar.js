@@ -37,16 +37,16 @@ const Navbar = () => {
             </div>
             {/* Service Dropdown Content */}
             {showServiceDropdown && (
-              <div className="absolute bg-white-100 text-primary-100 top-full left-0 rounded shadow-md py-2 w-[230%]">
+              <div className="absolute bg-white-100 text-primary-100 top-full left-0 rounded shadow-md py-2 w-[230%] text-sm">
                 <Link
-                  to="/service/1"
-                  className="block p-3 hover:bg-secondary-100"
+                  to="/service/inland"
+                  className="block p-3 hover:bg-secondary-100 text-sm"
                 >
                   Inland Services
                 </Link>
                 <Link
-                  to="/service/2"
-                  className="block p-3 hover:bg-secondary-100"
+                  to="/service/freight"
+                  className="block p-3 hover:bg-secondary-100 text-sm"
                 >
                   <div className="flex justify-between items-center">
                     <span>Shipping/air freight</span>
@@ -56,8 +56,8 @@ const Navbar = () => {
                   </div>
                 </Link>
                 <Link
-                  to="/service/3"
-                  className="block p-3 hover:bg-secondary-100"
+                  to="/service/railcargo"
+                  className="block p-3 hover:bg-secondary-100 text-sm"
                 >
                   <div className="flex justify-between items-center">
                     <span>Rail cargo transport</span>
@@ -90,24 +90,18 @@ const Navbar = () => {
             </div>
             {/* Marketplace Dropdown Content */}
             {showMarketplaceDropdown && (
-              <div className="absolute bg-white-100 text-primary-100 top-full left-0 rounded shadow-md py-2 w-[230%]">
+              <div className="absolute bg-white-100 text-primary-100 top-full left-0 rounded shadow-md py-2 w-[230%] text-sm">
                 <Link
-                  to="/marketplace/1"
-                  className="block p-3 hover:bg-secondary-100"
+                  to="/marketplace/manufacturers"
+                  className="block p-3 hover:bg-secondary-100 text-sm"
                 >
                   For manufacturers
                 </Link>
                 <Link
-                  to="/marketplace/2"
-                  className="block p-3 hover:bg-secondary-100"
+                  to="/marketplace/transporters"
+                  className="block p-3 hover:bg-secondary-100 text-sm"
                 >
                   For transporters
-                </Link>
-                <Link
-                  to="/marketplace/2"
-                  className="block p-3 hover:bg-secondary-100"
-                >
-                  For distributors
                 </Link>
               </div>
             )}
@@ -133,26 +127,26 @@ const Navbar = () => {
             </div>
             {/* Company Dropdown Content */}
             {showCompanyDropdown && (
-              <div className="absolute bg-white-100 text-primary-100 top-full left-0 rounded shadow-md py-2 w-[250%]">
+              <div className="absolute bg-white-100 text-primary-100 top-full left-0 rounded shadow-md py-2 w-[250%] text-sm">
                 <Link
                   to="/company#about"
-                  className="block p-3 hover:bg-secondary-100"
+                  className="block p-3 hover:bg-secondary-100 text-sm"
                 >
                   About us
                 </Link>
                 <Link
                   to="/company#advisory"
-                  className="block p-3 hover:bg-secondary-100"
+                  className="block p-3 hover:bg-secondary-100 text-sm"
                 >
                   Our team & advisory board
                 </Link>
                 <Link
                   to="/company#faq"
-                  className="block p-3 hover:bg-secondary-100"
+                  className="block p-3 hover:bg-secondary-100 text-sm"
                 >
                   FAQ
                 </Link>
-                <div className="flex justify-between items-center p-3 hover:bg-secondary-100">
+                <div className="flex justify-between items-center p-3 hover:bg-secondary-100 text-sm">
                   <span>Hiring</span>
                   <button className="text-[0.625rem] border border-[#64AB80] text-[#64AB80] rounded-full px-1 ml-2">
                     Coming soon

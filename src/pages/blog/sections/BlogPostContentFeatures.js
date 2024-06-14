@@ -109,7 +109,11 @@ const BlogPostContentFeatures = ({ post }) => {
           </div>
         </div>
 
-        <img src={imageUrl} alt="blog" className="w-full md:h-[37.5rem]" />
+        <img
+          src={imageUrl}
+          alt="blog"
+          className="w-full md:h-[37.5rem] object-cover object-center"
+        />
 
         <div className="flex justify-center items-center my-12">
           <div className="md:w-[65%]">

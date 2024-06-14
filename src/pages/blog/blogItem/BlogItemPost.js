@@ -9,14 +9,13 @@ const BlogItemPost = ({ post }) => {
     post.attributes.coverImage &&
     post.attributes.coverImage.data
       ? `http://localhost:1337${post.attributes.coverImage.data.attributes.url}`
-      : noImage; // If cover image data is not available, use noImage as the source
-
+      : noImage;
   return (
     <Link to={`/blogpost/${post.id}`}>
       <img
         src={imageUrl}
         alt="Blog"
-        className="mb-6 h-[16rem] md:h-[18.75rem] w-full"
+        className="mb-6 h-[16rem] md:h-[18.75rem] w-full object-cover object-center"
       />
 
       <div className="mb-6">

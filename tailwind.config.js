@@ -32,9 +32,6 @@ module.exports = {
       borderImageSlice: {
         gradient: "1",
       },
-      // backgroundImage: {
-      //   "bus-image": "url('/public/profile.jpeg')",
-      // },
     },
   },
   plugins: [require("@tailwindcss/typography")],
